@@ -1,110 +1,98 @@
-# Stablo - Astro Blog Template with MDX
+# Kho Số - Blog & Website
 
-Stablo Astro is an Astro version of [Stablo - Next.js Blog Template](https://stablo-pro.web3templates.com/), #1 template for Next.js & Sanity CMS. This is an Astro version of the same template.
+Chào mừng đến với mã nguồn của **Kho Số**, một trang blog chia sẻ kiến thức về lập trình, công nghệ, thiết kế và cuộc sống. 
+Trang web được xây dựng dựa trên Astro, MDX, TailwindCSS và hệ thống quản trị nội dung Keystatic.
 
-This free template is sponsored by [Web3Templates](https://web3templates.com)
+🌍 **Live Demo:** [https://khoso.pages.dev/](https://khoso.pages.dev/)
 
-## Live Demo
+## Tính năng chính
 
-### [https://stablo-astro.web3templates.com/](https://stablo-astro.web3templates.com/)
+- ⚡️ Tốc độ tải trang cực nhanh với **Astro**
+- 🎨 Giao diện tùy biến dễ dàng với **TailwindCSS**
+- 📝 Viết bài bằng Markdown/MDX
+- 🗄️ Quản lý nội dung trực quan với **Keystatic**
+- 📱 Responsive 100% trên mọi thiết bị
+- 🌙 Hỗ trợ Dark/Light mode
+- 🔍 Tối ưu hóa SEO
 
-### [Download Stablo Astro Template](https://web3templates.com/templates/stablo-minimal-blog-website-template)
+## Cài đặt và Chạy thử (Development)
 
-## Deploy on Vercel
-
-Click the below link to deploy this template on Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=hhttps://github.com/web3templates/stablo-astro&project-name=stablo-astro&repository-name=stablo-astro&demo-title=Stablo%20Astro%20Blog%20Template&demo-description=Stablo%20Astro%20is%20a%20starter%20blog%20template%20for%20Astro%20built%20with%20MDX%20&%20TailwindCSS&demo-url=https%3A%2F%2Fstablo-astro.web3templates.com%2F&demo-image=https://user-images.githubusercontent.com/1884712/169838344-e32b7426-621a-45a4-aba8-afedf3377e1f.jpeg)
-
-![Screenshot](https://user-images.githubusercontent.com/1884712/210131622-59ac9ff8-43fe-4a7d-b7fc-8b3b981baa52.png)
-
-## Installation
-
-If you are reading this on github, you can click on the "Use this template" button above to create a new repository from astroship to your account. Then you can do a `git clone` to clone it to your local system.
-
-Alternatively, you can clone the project directly from this repo to your local system.
-
-### 1. Clone the repo
+### 1. Clone repository
 
 ```bash
-git clone https://github.com/web3templates/stablo-astro.git myProjectName
-# or
-git clone https://github.com/web3templates/stablo-astro.git .
+git clone https://github.com/sangphamv/Van-Sang-gogh.git
+cd Van-Sang-gogh
 ```
 
-The `.` will clone it to the current directory so make sure you are inside your project folder first.
+### 2. Cài đặt thư viện
 
-### 2. Install Dependencies
+Bạn có thể sử dụng `npm`, `yarn`, hoặc `pnpm`:
 
 ```bash
 npm install
-# or
+# hoặc
 yarn install
-# or (recommended)
+# hoặc (khuyên dùng)
 pnpm install
 ```
 
-### 3. Start development Server
+### 3. Chạy Development Server
 
 ```bash
 npm run dev
-# or
+# hoặc
 yarn dev
-# or (recommended)
+# hoặc (khuyên dùng)
 pnpm dev
 ```
 
-### Preview & Build
+Mở trình duyệt ở địa chỉ `http://localhost:4321` để xem kết quả.
+Để quản lý nội dung (Thêm, Sửa, Xóa bài viết/danh mục) với Keystatic, truy cập `http://localhost:4321/keystatic`.
+
+## Build & Preview (Production)
 
 ```bash
 npm run build
 npm run preview
-# or
+# hoặc
 yarn build
 yarn preview
-# or (recommended)
+# hoặc (khuyên dùng)
 pnpm build
 pnpm preview
 ```
 
-We recommend using [pnpm](https://pnpm.io/) to save disk space on your computer.
+## Cấu trúc thư mục
 
-### Other Commands
-
-```bash
-pnpm astro ...
-pnpm astro add
-pnpm astro --help
-```
-
-## Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
+```text
 /
-├── public/
-│   └── ...
+├── public/           # Chứa các tài nguyên tĩnh (hình ảnh, favicon...)
 ├── src/
-│   ├── components/
-│   │   └── ...
-│   ├── layouts/
-│   │   └── ...
-│   └── pages/
-│       └── ...
+│   ├── assets/       # Hình ảnh dùng chung
+│   ├── components/   # Các UI Component (Astro, React)
+│   ├── content/      # Bài viết (blog) và danh mục (categories)
+│   ├── layouts/      # Layout chung của trang
+│   ├── pages/        # Định tuyến (Routes)
+│   ├── utils/        # Các hàm tiện ích
+│   └── site.config.ts # File cấu hình thông tin website (Tiêu đề, URL...)
+├── astro.config.mjs  # Cấu hình chính của Astro
+├── keystatic.config.ts # Cấu hình cho CMS Keystatic
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Thay đổi cấu hình website
 
-Any static assets, like images, can be placed in the `public/` directory.
+Để thay đổi thông tin chung của trang web (Tiêu đề, mô tả, thông tin liên hệ, mạng xã hội), bạn chỉnh sửa file `src/site.config.ts`.
 
-## TailwindCSS
+```typescript
+export const SITE_CONFIG = {
+  title: "Kho Số",
+  siteName: "Kho Số",
+  description: "Website chia sẻ về lập trình, công nghệ, và cuộc sống...",
+  // ...
+};
+```
 
-TailwindCSS is already configured in this repo, so you can start using them without any installation.
+---
 
-## 👀 Want to learn more?
-
-Feel free to check out [Astro Docs](https://docs.astro.build) or jump into our [Discord Chat](https://web3templates.com/discord).
-
-[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
+_Được xây dựng với ❤️ bằng [Astro](https://astro.build/)_

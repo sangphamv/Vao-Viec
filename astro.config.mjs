@@ -9,14 +9,12 @@ import partytown from "@astrojs/partytown";
 
 import react from "@astrojs/react";
 import keystatic from "@keystatic/astro";
-import node from "@astrojs/node";
 
 import { remarkReadingTime } from "./src/utils/all";
 
 export default defineConfig({
   output: 'static',
   site: "https://khoso.pages.dev/",
-  adapter: node({ mode: "standalone" }),
   markdown: {
     remarkPlugins: [remarkReadingTime],
     extendDefaultPlugins: true,
@@ -50,6 +48,6 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
-    keystatic()
+    ...(process.env.NODE_ENV === 'production' ? [] : [keystatic()])
   ],
 });
