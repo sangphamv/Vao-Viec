@@ -70,19 +70,19 @@ const seriesPosts = post.data.series
       <nav aria-label="Breadcrumb" class="flex justify-center mt-5 mb-2">
         <ol class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
           <li>
-            <a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Trang chủ</a>
+            <a href="/" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Trang chủ</a>
           </li>
           <li>
             <span class="mx-0.5">/</span>
           </li>
           <li>
-            <a href="/category" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Danh mục</a>
+            <a href="/category" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Danh mục</a>
           </li>
           <li>
             <span class="mx-0.5">/</span>
           </li>
           <li>
-            <a href={`/category/${category.slug}`} class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{category.title}</a>
+            <a href={`/category/${category.slug}`} class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{category.title}</a>
           </li>
           <li>
             <span class="mx-0.5">/</span>
@@ -150,8 +150,8 @@ const seriesPosts = post.data.series
       post.data.image && (
         <Picture
           src={post.data.image}
-          widths={[200, 400, 800]}
-          sizes="(max-width: 640px) 90vw, 480px"
+          widths={[400, 800, 1200, 1600]}
+          sizes="(max-width: 800px) 100vw, 1200px"
           width={1024}
           height={576}
           formats={["avif"]}
@@ -160,6 +160,7 @@ const seriesPosts = post.data.series
           loading="eager"
           fetchpriority="high"
           class="w-full h-full object-cover"
+          data-zoom-src={post.data.image.src}
         />
       )
     }
@@ -178,7 +179,7 @@ const seriesPosts = post.data.series
           <TOC headings={headings.filter(h => h.depth === 2 || h.depth === 3)} isAccordion={true} />
         </div>
 
-        <div class="mx-auto my-6 prose md:prose-lg dark:prose-invert prose-a:text-blue-600 hover:prose-a:text-blue-500 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300 prose-headings:font-bold prose-img:rounded-xl prose-img:shadow-md prose-img:aspect-video prose-img:w-full prose-img:object-cover prose-img:mx-auto w-full max-w-none">
+        <div class="mx-auto my-6 prose md:prose-lg dark:prose-invert prose-a:text-primary-600 hover:prose-a:text-primary-500 dark:prose-a:text-primary-400 dark:hover:prose-a:text-primary-300 prose-headings:font-bold prose-img:rounded-xl prose-img:shadow-md prose-img:aspect-video prose-img:w-full prose-img:object-cover prose-img:mx-auto w-full max-w-none">
           {seriesPosts.length > 0 && (
             <div class="bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800 rounded-xl mb-8 not-prose overflow-hidden">
               <button 
@@ -235,7 +236,7 @@ const seriesPosts = post.data.series
           <div class="flex flex-wrap items-center w-full gap-3 md:w-auto mt-10">
             {
               post.data.tags.map((tag) => (
-                <a href={`/tags/${tag}`} class="text-sm text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">#{tag}</a>
+                <a href={`/tags/${tag}`} class="text-sm text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">#{tag}</a>
               ))
             }
           </div>

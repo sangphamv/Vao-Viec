@@ -34,7 +34,7 @@ const { page, category } = Astro.props;
       <Fragment slot="title">{category.title}</Fragment>
       <Fragment slot="desc">{category.description}</Fragment>
     </Pagetitle>
-    <main>
+    <main id="main-content">
       {page.data.length > 0 ? (
         <>
           <div class="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3">

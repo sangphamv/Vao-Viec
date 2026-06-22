@@ -75,6 +75,7 @@ const resolvedImage = image ?? ogimage;
     </script>
   </head>
   <body class="antialiased text-gray-800 bg-white dark:bg-black dark:text-gray-400">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] px-4 py-2 bg-primary-600 text-white rounded-md">Chuyển đến nội dung chính</a>
     <Navbar />
     <slot />
     <Footer />
@@ -106,7 +107,7 @@ const resolvedImage = image ?? ogimage;
         border: none;
         border-radius: 0.25rem;
         cursor: pointer;
-        opacity: 0;
+        opacity: 0.5;
         transition: opacity 0.2s, color 0.2s, background-color 0.2s;
       }
       .astro-code:hover .copy-code-btn {

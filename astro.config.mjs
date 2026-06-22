@@ -14,7 +14,7 @@ import node from "@astrojs/node";
 import { remarkReadingTime } from "./src/utils/all";
 
 export default defineConfig({
-  site: "https://sangphamvee.pages.dev",
+  site: "https://vansanggogh.pages.dev/",
   adapter: node({ mode: "standalone" }),
   markdown: {
     remarkPlugins: [remarkReadingTime],

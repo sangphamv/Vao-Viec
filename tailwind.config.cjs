@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         gray: colors.neutral,
+        primary: colors.indigo,
       },
       fontFamily: {
         sans: ["Inter Variable", "Inter", ...defaultTheme.fontFamily.sans],

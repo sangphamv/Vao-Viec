@@ -19,10 +19,10 @@ const slug = post.id.replace(/\.(md|mdx)$/, '');
 const TitleTag = aspect === "landscape" ? "h2" : "h3";
 ---
 
-<div class="cursor-pointer group">
+<div class="cursor-pointer group relative">
   <div
     class={cx(
-      "relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800   hover:scale-105",
+      "relative overflow-hidden transition-all duration-300 bg-gray-100 rounded-xl dark:bg-gray-800 group-hover:-translate-y-1 group-hover:shadow-xl group-hover:shadow-primary-500/20",
       "aspect-video"
     )}>
     <a href={"/category/" + post.data.category + "/" + slug}>
@@ -37,7 +37,7 @@ const TitleTag = aspect === "landscape" ? "h2" : "h3";
             alt={`Hình ảnh nổi bật cho bài viết: ${post.data.title}`}
             loading={preloadImage ? "eager" : "lazy"}
             fetchpriority={preloadImage ? "high" : "auto"}
-            class="w-full h-full object-cover rounded-md"
+            class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <span class="absolute w-16 h-16 text-gray-200 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -57,24 +57,22 @@ const TitleTag = aspect === "landscape" ? "h2" : "h3";
     </a>
   )}
   <TitleTag
-    class="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
-    <a href={"/category/" + post.data.category + "/" + slug}>
+    class="mt-2 text-lg font-semibold tracking-normal text-primary-600 dark:text-white">
+    <a href={"/category/" + post.data.category + "/" + slug} class="before:absolute before:inset-0 before:z-10">
       <span
-        class="bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
+        class="bg-gradient-to-r from-primary-200 to-primary-100 dark:from-primary-800 dark:to-primary-900 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
         {post.data.title}
       </span>
     </a>
   </TitleTag>
 
-  <div class="hidden">
-    {
-      post.data.excerpt && (
-        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
-          <a href={"/category/" + post.data.category + "/" + slug}>{post.data.excerpt}</a>
-        </p>
-      )
-    }
-  </div>
+  {
+    post.data.excerpt && (
+      <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+        <a href={"/category/" + post.data.category + "/" + slug}>{post.data.excerpt}</a>
+      </p>
+    )
+  }
 
   <div
     class="flex items-center mt-3 space-x-3 text-gray-500 dark:text-gray-400">

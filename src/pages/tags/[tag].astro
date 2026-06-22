@@ -36,7 +36,7 @@ const { tag, posts } = Astro.props;
       <Fragment slot="title">#{tag}</Fragment>
       <Fragment slot="desc">Danh sách các bài viết với thẻ #{tag}</Fragment>
     </Pagetitle>
-    <main>
+    <main id="main-content">
       {posts.length > 0 ? (
         <div class="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3">
           {posts.map((post) => <Postlist post={post} aspect="square" />)}

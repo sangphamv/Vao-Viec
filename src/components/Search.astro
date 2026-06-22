@@ -48,7 +48,7 @@
   /* Tùy chỉnh một chút giao diện Pagefind UI bằng Tailwind tokens */
   :root {
     --pagefind-ui-scale: 1;
-    --pagefind-ui-primary: #2563eb; /* text-blue-600 */
+    --pagefind-ui-primary: #2563eb; /* text-primary-600 */
     --pagefind-ui-text: #374151; /* text-gray-700 */
     --pagefind-ui-background: #ffffff;
     --pagefind-ui-border: #e5e7eb; /* border-gray-200 */
@@ -62,7 +62,7 @@
 
   /* Hỗ trợ Dark Mode */
   .dark {
-    --pagefind-ui-primary: #60a5fa; /* text-blue-400 */
+    --pagefind-ui-primary: #60a5fa; /* text-primary-400 */
     --pagefind-ui-text: #d1d5db; /* text-gray-300 */
     --pagefind-ui-background: #1f2937; /* bg-gray-800 */
     --pagefind-ui-border: #374151; /* border-gray-700 */
@@ -71,6 +71,6 @@
 
   /* Làm cho input search trông giống Tailwind hơn */
   .pagefind-ui__search-input {
-    @apply focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow duration-200;
+    @apply focus:ring-2 focus:ring-primary-500 focus:outline-none transition-shadow duration-200;
   }
 </style>

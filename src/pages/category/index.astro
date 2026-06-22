@@ -13,7 +13,7 @@ const categories = allCategories.map((cat) => ({
 
 const colorClasses = {
   green: "bg-emerald-50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800",
-  blue: "bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 border border-blue-100 dark:border-blue-800",
+  blue: "bg-primary-50 text-primary-600 dark:bg-primary-900/20 dark:text-primary-400 border border-primary-100 dark:border-primary-800",
   orange: "bg-orange-50 text-orange-700 dark:bg-orange-900/20 dark:text-orange-400 border border-orange-100 dark:border-orange-800",
   purple: "bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 border border-purple-100 dark:border-purple-800",
   pink: "bg-pink-50 text-pink-600 dark:bg-pink-900/20 dark:text-pink-400 border border-pink-100 dark:border-pink-800",
@@ -26,7 +26,7 @@ const colorClasses = {
       <Fragment slot="title">Danh mục</Fragment>
       <Fragment slot="desc">Khám phá các bài viết theo chủ đề.</Fragment>
     </Pagetitle>
-    <main>
+    <main id="main-content">
       <div class="grid gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-3">
         {
           categories.map((category) => (

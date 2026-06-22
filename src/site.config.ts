@@ -13,7 +13,7 @@ export const SITE_CONFIG = {
 
   // Thông tin liên hệ mặc định
   contact: {
-    email: "vansanggood@gmail.com",
+    email: "vansanggogh@gmail.com",
     phone: "(+84) 707297069",
     address: "Q6, TP. Ho Chi Minh",
   },
@@ -21,6 +21,6 @@ export const SITE_CONFIG = {
   // Mạng xã hội / Footer links
   social: {
     github: "https://github.com/sangphamv",
-    website: "https://vansangood.me"
+    website: "https://vansanggogh.pages.dev/"
   }
 };
