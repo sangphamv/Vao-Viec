@@ -49,6 +49,7 @@ export default defineConfig({
     partytown({
       config: {
         forward: ["dataLayer.push"],
+        lib: "/partytown/",
       },
     }),
     ...(process.env.NODE_ENV === 'production' ? [] : [keystatic()])
