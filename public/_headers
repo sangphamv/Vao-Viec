@@ -1,2 +1,2 @@
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://giscus.app 'unsafe-inline'; frame-src 'self' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app https://api.github.com;
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; script-src 'self' https://giscus.app 'unsafe-inline'; frame-src 'self' https://giscus.app; style-src 'self' 'unsafe-inline'; connect-src 'self' https://giscus.app https://api.github.com;
