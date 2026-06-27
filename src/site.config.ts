@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   // Tiêu đề mặc định của trang web
-  title: "Vock Tech",
+  title: "Vock Tech - Cập nhật xu hướng Công nghệ & AI thực chiến",
 
   // Tên thương hiệu / Tên blog (dùng cho copyright, logo alt, v.v.)
   siteName: "Vock Tech",
