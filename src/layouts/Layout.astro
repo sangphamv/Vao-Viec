@@ -1,5 +1,5 @@
 ---
-import '@fontsource-variable/inter';
+import { AstroFont } from 'astro-font';
 import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import interVietnamese from '@fontsource-variable/inter/files/inter-vietnamese-wght-normal.woff2?url';
 import Footer from "@/components/footer.astro";
@@ -37,9 +37,29 @@ const resolvedImage = image ?? ogimage;
     {SITE_CONFIG.analytics?.searchConsole?.enabled && SITE_CONFIG.analytics?.searchConsole?.metaVerification && (
       <meta name="google-site-verification" content={SITE_CONFIG.analytics.searchConsole.metaVerification} />
     )}
-    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href={interVietnamese} as="font" type="font/woff2" crossorigin="anonymous" />
-    
+    <AstroFont
+      config={[
+        {
+          name: "Inter",
+          src: [
+            {
+              style: 'normal',
+              weight: '100 900',
+              path: interLatin,
+            },
+            {
+              style: 'normal',
+              weight: '100 900',
+              path: interVietnamese,
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "sans-serif",
+        },
+      ]}
+    />
     <!-- Preconnect hints cho các third-party origins (Giscus) -->
     <link rel="preconnect" href="https://giscus.app" crossorigin />
     <link rel="preconnect" href="https://api.github.com" crossorigin />
