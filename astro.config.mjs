@@ -9,7 +9,6 @@ import path from "path";
 import partytown from "@astrojs/partytown";
 
 import react from "@astrojs/react";
-import keystatic from "@keystatic/astro";
 
 import { remarkReadingTime } from "./src/utils/all";
 import rehypeComponents from "rehype-components";
@@ -82,6 +81,5 @@ export default defineConfig({
         lib: "/partytown/",
       },
     }),
-    ...(process.env.NODE_ENV === 'production' ? [] : [keystatic()])
   ],
 });

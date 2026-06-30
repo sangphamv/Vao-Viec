@@ -1,7 +1,7 @@
 ---
 import cx from "classnames";
 
-import { Image, Picture } from "astro:assets";
+import { Image } from "astro:assets";
 import Label from "@/components/ui/label.astro";
 import type { Author } from "@/data/authors";
 import { authors } from "@/data/authors";
@@ -32,12 +32,10 @@ const TitleTag = aspect === "landscape" ? "h2" : "h3";
     <a href={"/danh-muc/" + post.data.category + "/" + slug} class="block w-full h-full">
       {
         post.data.image ? (
-          <Picture
+          <Image
             src={post.data.image}
-            widths={[480]}
-            sizes="(max-width: 640px) 90vw, 480px"
-            formats={["avif"]}
-            fallbackFormat="avif"
+            width={480}
+            format="avif"
             quality={80}
             alt={`Hình ảnh nổi bật cho bài viết: ${post.data.title}`}
             loading={preloadImage ? "eager" : "lazy"}

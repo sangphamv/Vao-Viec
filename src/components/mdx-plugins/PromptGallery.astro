@@ -1,0 +1,80 @@
+---
+import PromptCard from './PromptCard.astro';
+
+interface PromptItem {
+  title: string;
+  prompt: string;
+  image: ImageMetadata;
+}
+
+interface Props {
+  items: PromptItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="not-prose my-10">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    {items.map(item => (
+      <PromptCard 
+        title={item.title} 
+        prompt={item.prompt} 
+        image={item.image} 
+      />
+    ))}
+  </div>
+</div>
+
+<script>
+  function initCopyButtons() {
+    const copyButtons = document.querySelectorAll('.copy-mdx-btn');
+
+    copyButtons.forEach((button) => {
+      // Đảm bảo không gắn sự kiện nhiều lần (tránh dính click 2 lần)
+      if (button.hasAttribute('data-init')) return;
+      button.setAttribute('data-init', 'true');
+      
+      button.addEventListener('click', async (e) => {
+        const btn = e.currentTarget as HTMLButtonElement;
+        const promptText = btn.dataset.prompt;
+        if (!promptText) return;
+
+        const iconDefault = btn.querySelector('.icon-default');
+        const iconSuccess = btn.querySelector('.icon-success');
+        const textSpan = btn.querySelector('.btn-text');
+
+        try {
+          await navigator.clipboard.writeText(promptText);
+
+          btn.classList.add('!bg-green-600', '!border-green-500', '!text-white');
+          iconDefault?.classList.add('hidden');
+          iconSuccess?.classList.remove('hidden');
+          if (textSpan) {
+            textSpan.textContent = 'Đã copy!';
+          }
+
+          setTimeout(() => {
+            btn.classList.remove('!bg-green-600', '!border-green-500', '!text-white');
+            iconDefault?.classList.remove('hidden');
+            iconSuccess?.classList.add('hidden');
+            if (textSpan) {
+              textSpan.textContent = 'Copy Prompt';
+              textSpan.classList.remove('text-emerald-400');
+            }
+          }, 2000);
+
+        } catch (err) {
+          console.error('Copy failed!', err);
+          alert('Không thể copy vào clipboard. Trình duyệt của bạn có thể đang chặn quyền này.');
+        }
+      });
+    });
+  }
+
+  // Chạy ngay khi component được render (dành cho website bình thường / MPA)
+  initCopyButtons();
+
+  // Chạy lại mỗi khi đổi trang (nếu website dùng Astro View Transitions)
+  document.addEventListener('astro:page-load', initCopyButtons);
+</script>

@@ -12,12 +12,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Light Mode
         light: {
           background: '#F7F5F0', // Nền chính
           surface: '#B3A795',    // Cấu trúc/Border/Card
           foreground: '#1C1B1A', // Chữ chính
           accent: '#FF5722',     // Nhấn
+          card: '#FFFFFF',       // Nền thẻ Card nổi bật
+          muted: '#6F6A62',      // Chữ phụ / mờ
         },
         // Dark Mode
         dark: {
@@ -25,6 +26,8 @@ module.exports = {
           surface: '#2D2724',    // Cấu trúc/Card
           foreground: '#E6DFD3', // Chữ chính
           accent: '#00F5D4',     // Nhấn
+          card: '#1E1B19',       // Nền thẻ Card tối
+          muted: '#968E85',      // Chữ phụ / mờ
         },
       },
       // 👇 TÙY CHỈNH BORDER & RING TẠI ĐÂY

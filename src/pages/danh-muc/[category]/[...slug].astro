@@ -1,5 +1,5 @@
 ---
-import { Image, Picture } from "astro:assets";
+import { Image } from "astro:assets";
 import Authorcard from "@/components/authorcard.astro";
 import Container from "@/components/container.astro";
 import Label from "@/components/ui/label.astro";
@@ -187,14 +187,11 @@ const seriesPosts = post.data.series
     class="relative z-0 w-full max-w-[800px] mx-auto overflow-hidden lg:rounded-lg aspect-video">
     {
       post.data.image && (
-        <Picture
+        <Image
           src={post.data.image}
-          widths={[768, 1024]}
-          sizes="(max-width: 800px) 100vw, 1024px"
           width={1024}
           height={576}
-          formats={["avif"]}
-          fallbackFormat="avif"
+          format="avif"
           quality={80}
           alt={post.data.title}
           loading="eager"
