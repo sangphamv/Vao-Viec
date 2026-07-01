@@ -15,7 +15,7 @@ const isPdf = fileExt === 'pdf';
 const isPsd = fileExt === 'psd';
 ---
 
-<div class="not-prose my-8 p-5 bg-light-card dark:bg-dark-card border border-light-surface/50 dark:border-dark-surface rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 shadow-lg hover:shadow-xl transition-shadow">
+<div class="not-prose my-8 p-5 bg-light-prompt dark:bg-dark-prompt border border-light-accent/30 dark:border-dark-accent/30 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 shadow-lg hover:shadow-xl hover:border-light-accent/60 dark:hover:border-dark-accent/60 transition-all duration-300">
   
   <div class="flex items-center gap-4 w-full">
     <!-- Icon Placeholder theo định dạng file -->
@@ -38,7 +38,7 @@ const isPsd = fileExt === 'psd';
   </div>
 
   <button
-    class="dl-btn group relative flex-shrink-0 w-full sm:w-44 h-11 bg-light-accent dark:bg-dark-accent text-white hover:opacity-90 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center justify-center disabled:opacity-80"
+    class="dl-btn group relative flex-shrink-0 w-full sm:w-44 h-12 bg-light-accent dark:bg-dark-accent text-white dark:text-dark-background hover:bg-light-accent/90 dark:hover:bg-dark-accent/90 rounded-lg text-[19px] font-bold transition-colors duration-200 flex items-center justify-center disabled:opacity-80"
     data-url={url}
     data-wait={waitTime}
   >

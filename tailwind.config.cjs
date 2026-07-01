@@ -19,6 +19,7 @@ module.exports = {
           accent: '#FF5722',     // Nhấn
           card: '#FFFFFF',       // Nền thẻ Card nổi bật
           muted: '#6F6A62',      // Chữ phụ / mờ
+          prompt: '#FFF3F0',     // Thẻ Copy Prompt light
         },
         // Dark Mode
         dark: {
@@ -28,6 +29,7 @@ module.exports = {
           accent: '#00F5D4',     // Nhấn
           card: '#1E1B19',       // Nền thẻ Card tối
           muted: '#968E85',      // Chữ phụ / mờ
+          prompt: '#1A2E2B',     // Thẻ Copy Prompt dark
         },
       },
       // 👇 TÙY CHỈNH BORDER & RING TẠI ĐÂY

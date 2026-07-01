@@ -19,7 +19,7 @@ const jsonLd = {
 };
 ---
 
-<div class="group relative flex flex-col bg-light-card dark:bg-dark-card rounded-xl overflow-hidden border border-light-surface/50 dark:border-dark-surface shadow-lg not-prose">
+<div class="group relative flex flex-col bg-light-prompt dark:bg-dark-prompt rounded-xl overflow-hidden border border-light-accent/30 dark:border-dark-accent/30 shadow-lg not-prose transition-colors duration-300 hover:shadow-xl hover:border-light-accent/60 dark:hover:border-dark-accent/60">
   
   <div class="relative aspect-[4/3] overflow-hidden bg-light-surface/20 dark:bg-dark-background/50">
     <Image 
@@ -31,11 +31,11 @@ const jsonLd = {
       quality={80}
       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-light-card via-light-card/50 dark:from-dark-card dark:via-dark-card/60 to-transparent opacity-100"></div>
+
   </div>
 
-  <div class="relative flex flex-col flex-grow p-5 -mt-12 z-10">
-    <h4 class="text-base font-bold text-light-foreground dark:text-dark-foreground mb-2 truncate shadow-black drop-shadow-md">{title}</h4>
+  <div class="relative flex flex-col flex-grow p-5">
+    <h4 class="text-base font-bold text-light-foreground dark:text-dark-foreground mb-2 truncate">{title}</h4>
     
     <div class="flex-grow mb-4">
       <p class="text-sm text-light-muted dark:text-dark-muted line-clamp-3 leading-relaxed" title={prompt}>
@@ -45,7 +45,7 @@ const jsonLd = {
 
     <!-- Copy Button -->
     <button 
-      class="copy-mdx-btn flex items-center justify-center gap-2 w-full py-2.5 bg-light-background hover:bg-light-accent dark:bg-dark-surface/50 dark:hover:bg-dark-accent text-light-foreground dark:text-dark-foreground hover:text-white border border-light-surface/50 dark:border-dark-surface hover:border-light-accent dark:hover:border-dark-accent rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer shadow-sm"
+      class="copy-mdx-btn flex items-center justify-center gap-2 w-full py-2.5 bg-gradient-to-r from-light-accent/90 to-light-accent hover:from-light-accent hover:to-light-accent/90 dark:from-dark-accent/80 dark:to-dark-accent dark:hover:from-dark-accent dark:hover:to-dark-accent/90 text-white dark:text-dark-background border-none rounded-lg text-sm font-bold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
       data-prompt={prompt}
     >
       <svg class="icon-default w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">

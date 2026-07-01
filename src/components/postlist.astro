@@ -9,7 +9,7 @@ import { getFormattedDate } from "@/utils/all";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
-const { post, aspect, preloadImage } = Astro.props;
+const { post, aspect, preloadImage, isFeatured = false } = Astro.props;
 const author = authors.find((item) => item.slug === post.data.author) as Author;
 const allCategories = await getCollection("categories");
 const categoryDoc = allCategories.find(
@@ -23,7 +23,10 @@ const slug = post.id.replace(/\.(md|mdx)$/, "");
 const TitleTag = aspect === "landscape" ? "h2" : "h3";
 ---
 
-<div class="relative">
+<div class={cx(
+  "relative h-full flex flex-col group/post transition-all duration-300",
+  isFeatured && "lg:gap-2"
+)}>
   <div
     class={cx(
       "group/image relative overflow-hidden transition-all duration-300 bg-light-surface/30 rounded-xl dark:bg-dark-surface hover:-translate-y-1 hover:shadow-xl hover:shadow-light-accent/20 dark:hover:shadow-dark-accent/20",
@@ -58,7 +61,8 @@ const TitleTag = aspect === "landscape" ? "h2" : "h3";
       </a>
     )
   }
-  <TitleTag
+  <div class="flex-grow flex flex-col">
+    <TitleTag
     class="mt-3 text-lg font-semibold tracking-normal text-light-accent dark:text-dark-accent dark:text-dark-foreground">
     <a
       href={"/danh-muc/" + post.data.category + "/" + slug} class="group/title">
@@ -69,15 +73,16 @@ const TitleTag = aspect === "landscape" ? "h2" : "h3";
     </a>
   </TitleTag>
 
-  {
-    post.data.excerpt && (
-      <p class="mt-3 text-sm leading-relaxed text-light-foreground/70 dark:text-dark-foreground/70 line-clamp-2">
-        <a href={"/danh-muc/" + post.data.category + "/" + slug}>
-          {post.data.excerpt}
-        </a>
-      </p>
-    )
-  }
+    {
+      post.data.excerpt && (
+        <p class="mt-3 text-sm leading-relaxed text-light-foreground/70 dark:text-dark-foreground/70 line-clamp-3">
+          <a href={"/danh-muc/" + post.data.category + "/" + slug}>
+            {post.data.excerpt}
+          </a>
+        </p>
+      )
+    }
+  </div>
 
   <div
     class="flex items-center mt-5 space-x-3 text-light-foreground/70 dark:text-dark-foreground/70 font-medium">
